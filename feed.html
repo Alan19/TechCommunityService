@@ -14,17 +14,33 @@
           task = ["cleaning up", "assisting teacher", "carrying equipment", "paperwork", "monitoring", "tutoring"];
           roomCodes = ["N", "W", "E","S"];
           opportunitiesArray = [];
+          volunteerHistory = [];
       
           // locationIndex = generateRandomNumberBetween(0,locations.length - 1);
           // opportunity += locations[i] + " Task:";
           // opportunity += task[generateRandomNumberBetween(0,task.length - 1)] + ".";
           populateArray(6);  
           populateWithOpportunities();
+          if(volunteerHistory.length == 0){
+            $('#processing').append(emptyCard("remove_shopping_cart", "You don't have any volunteer experience! You need 50 hours for a Tech diploma.", "volunteer-empty"));
+          }
           
           hours = document.getElementById("numberH");
           date = document.getElementById("dateH");
           company = document.getElementById("providerH");
           where = document.getElementById("locationH");
+        }
+        
+        function emptyCard(icon, text, id){
+          var emptyCard = `<div class="card blue-grey darken-1" id=${id}>
+                <div class="card-content white-text">
+                  <center>
+                    <i class = "material-icons large" style = "opacity:.5;">${icon}</i>
+                    <p style = "opacity:.5">${text}</p>
+                  </center>
+                </div>
+             </div>`;
+          return emptyCard;
         }
         function generateRandomNumberBetween(a, b)
         {
@@ -84,18 +100,18 @@
         }
       function formSubmit()
       {
-        
+        $('#volunteer-empty').remove();
         finalDisplay = "Number of hours: " + hours.value + "<br />" +
         "Date: " + date.value + "<br />" +
         "Provider: " + company.value + "<br />" +
         "Location: " + where.value + "<br />" + "<br />";
-         card = `<div class="card blue-grey darken-1"><div class="card-content white-text">
-                        <span class="card-title">${company.value}</span>
-                        <p>${finalDisplay}</p>
-                      </div>
-                      <div class="card-action">
-                      </div>
-                    </div></div>`;        
+         card = 
+        `<div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">${company.value}</span>
+            <p>${finalDisplay}</p>
+          </div>
+          </div>`;        
         $("#processing").append(card);
         
           hours.value = "";
@@ -105,6 +121,7 @@
       }
       function responseSubmit()
       {
+        window.open(`https://mail.google.com/mail/u/0/?view=cm&fs=1&to=kip@schools.nyc.gov&su=${$('#subjectF').val()}&body=${$('#queryF').val()}`);
         document.getElementById("nameF").value = "";
         document.getElementById("subjectF").value = "";
         document.getElementById("queryF").value = "";
@@ -135,7 +152,7 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <span class="card-title"> Community Service Hours</span>
-            Number of Hours: <input type = "text" id = "numberH" /></br>
+            Number of Hours: <input type = "number" id = "numberH" /></br>
             Date: <input type = "text" id = "dateH" /></br>
             Provider:<input type ="text" id ="providerH" /></br>
             Location:<input type ="text" id ="locationH" /></br>
@@ -145,10 +162,7 @@
       </div>
       <div class="col s3">
         <h2>Processing</h2>
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text" id="processing">
-            <span class="card-title">List of Past Volunteering Services</span>
-          </div>
+        <div id="processing">
         </div>
       </div>
       <div class="col s3 " id = "history">
@@ -159,7 +173,7 @@
             Faculty Member:<input type = "text" id = "nameF" /></br>
             Subject:<input type = "text" id = "subjectF" /></br>
             Query:<input type ="text" id ="queryF"/></br>
-            <a onclick="alert('Your message has been sent!');responseSubmit();" class="waves-effect waves-light btn" >Send Query</a>
+            <a onclick="responseSubmit();" class="waves-effect waves-light btn" >Send Query</a>
           </div>
         </div>
       </div>

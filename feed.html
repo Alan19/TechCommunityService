@@ -6,7 +6,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
+        $( document ).ready(function() {
+            $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year
+            format:"mm/dd/yy"
+          });
+        });
       function initialize()
         {
           opportunity = "Help needed at ";
@@ -29,6 +37,7 @@
           date = document.getElementById("dateH");
           company = document.getElementById("providerH");
           where = document.getElementById("locationH");
+          
         }
         
         function emptyCard(icon, text, id){
@@ -102,7 +111,7 @@
       {
         $('#volunteer-empty').remove();
         finalDisplay = "Number of hours: " + hours.value + "<br />" +
-        "Date: " + date.value + "<br />" +
+        "Date: " + $('.datepicker').val() + "<br />" +
         "Provider: " + company.value + "<br />" +
         "Location: " + where.value + "<br />" + "<br />";
          card = 
@@ -152,10 +161,16 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <span class="card-title"> Community Service Hours</span>
-            Number of Hours: <input type = "number" id = "numberH" /></br>
-            Date: <input type = "text" id = "dateH" /></br>
-            Provider:<input type ="text" id ="providerH" /></br>
-            Location:<input type ="text" id ="locationH" /></br>
+            <div class = 'input-field'>
+              <input type = "number" id = "numberH" /><label>Number of Hours</label>
+            </div>
+            <div class = 'input-field'>
+              <input type="date" class="datepicker"><label>Start of Volunteering</label>
+            </div>
+              
+              Provider:<input type ="text" id ="providerH" /></br>
+              Location:<input type ="text" id ="locationH" /></br>
+            
             <a onclick="formSubmit()" class="waves-effect waves-light btn" >Submit Info</a>
           </div>
         </div>
@@ -172,8 +187,8 @@
             <span class="card-title"> Contact Faculty</span>
             Faculty Member:<input type = "text" id = "nameF" /></br>
             Subject:<input type = "text" id = "subjectF" /></br>
-            Query:<input type ="text" id ="queryF"/></br>
-            <a onclick="responseSubmit();" class="waves-effect waves-light btn" >Send Query</a>
+            Message:<input type ="text" id ="queryF"/></br>
+            <a onclick="responseSubmit();" class="waves-effect waves-light btn" >Send Message</a>
           </div>
         </div>
       </div>
@@ -222,8 +237,10 @@
       </div>
     </footer>
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/date_picker/picker.date.js"></script>
+    <script src="js/date_picker/picker.time.js"></script>
+    <script src="js/date_picker/picker.js"></script> 
   </body>
 </html>

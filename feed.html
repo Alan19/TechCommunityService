@@ -32,14 +32,17 @@
           <div class="card-content white-text">
             <span class="card-title"> Community Service Hours</span>
             <div class = 'input-field'>
-              <input type = "number" id = "numberH" /><label>Number of Hours</label>
+              <input type = "number" id = "numberH" placeholder=""/><label>Number of Hours</label>
             </div>
             <div class = 'input-field'>
-              <input type="date" class="datepicker"><label>Start of Volunteering</label>
+              <input type="date" class="datepicker" placeholder=""><label>Start of Volunteering</label>
             </div>
-              
-              Provider:<input type ="text" id ="providerH" /></br>
-              Location:<input type ="text" id ="locationH" /></br>
+            <div class="input-field">  
+              <input type ="text" id ="providerH" placeholder=""><label>Provider</label>
+            </div>
+            <div class="input-field">
+              <input type ="text" id ="locationH" placeholder=""><label>Location</label>
+            </div>
             
             <a onclick="formSubmit()" class="waves-effect waves-light btn" >Submit Info</a>
           </div>
@@ -50,7 +53,7 @@
         <div id="processing">
         </div>
       </div>
-      <div class="col s3 " id = "history">
+      <div class="col s3" id = "history">
         <h2>Contact Faculty</h2>
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">

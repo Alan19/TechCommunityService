@@ -1,149 +1,149 @@
 <!DOCTYPE HTML>
-<html lang ="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>TechService</title>
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  </head>
-  <body onload = "initialize();" class = "grey lighten-4">
-    <nav class="white" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="index.html" class="brand-logo ">TechService</a>
-        <ul id="nav-mobile" class="side-nav">
-          <li>
-            <a href="#">Menu</a>
-          </li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"></a>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>TechService</title>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body onload="initialize();" class="grey lighten-4">
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo ">TechService</a>
+      <ul id="nav-mobile" class="side-nav">
+        <li>
+          <a href="#">Menu</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"></a>
+    </div>
+  </nav>
+  <main class="container">
+    <div class="row">
+      <div class="col s12 m7 community-service-card">
+        <h5 class="card-title"> Community Service Hours</h5>
+        <div class='input-field'>
+          <input type="number" id="numberH" placeholder="" />
+          <label>Number of Hours</label>
+        </div>
+        <div class='input-field'>
+          <input type="date" id="dateH" class="datepicker" placeholder="">
+          <label>Start of Volunteering</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="providerH" placeholder="">
+          <label>Provider</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="locationH" placeholder="">
+          <label>Location</label>
+        </div>
+        <a onclick="formSubmit()" class="waves-effect waves-light btn">Submit Info</a>
       </div>
-    </nav>
-    <main class="container">
-      <div class="row">
-        <div id="requests">
-          <div class="col s12 m5 community-service-card">
-              <div class="section">
-                <h5 class="card-title"> Community Service Hours</h5>
-                <div class='input-field'>
-                  <input type="number" id="numberH" placeholder="" />
-                  <label>Number of Hours</label>
-                </div>
-                <div class='input-field'>
-                  <input type="date" id="dateH" class="datepicker" placeholder="">
-                    <label>Start of Volunteering</label>
-                  </div>
-                  <div class="input-field">
-                    <input type="text" id="providerH" placeholder="">
-                      <label>Provider</label>
-                    </div>
-                    <div class="input-field">
-                      <input type="text" id="locationH" placeholder="">
-                        <label>Location</label>
-                      </div>
-                      <a onclick="formSubmit()" class="waves-effect waves-light btn">Submit Info</a>
-                    </div>
-                </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m7">
+        <div class="section">
+          <ul class="tabs tabs-fixed-width grey lighten-3">
+            <li class="tab">
+              <a href="#tasktab" class="blue-grey-text">Tasks</a>
+            </li>
+            <li class="tab">
+              <a href="#processing" class="blue-grey-text">Processing</a>
+            </li>
+            <li class="tab">
+              <a href="#contact-faculty" class="blue-grey-text">Contact Faculty</a>
+            </li>
+          </ul>
+          <div>
+            <div id="tasktab" class="tab-content">
+              <div id="taskList"></div>
+              <a onclick="addMore()" class="waves-effect waves-light btn">Show More</a>
+            </div>
+            <div id="processing" class="tab-content"></div>
+          </div>
+          <div class="tab-content" id="contact-faculty">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title"> Contact Faculty</span> Faculty Member:
+                <input type="text" id="nameF" />
+                </br>Subject:
+                <input type="text" id="subjectF" />
+                </br>
+                Message:
+
+                <input type="text" id="queryF" />
+                </br>
+                <a onclick="responseSubmit();" class="waves-effect waves-light btn">Send Message</a>
               </div>
-              <div class="" id="history">
-                <div class="col offset-m1 s12 m6">
-                  <div class="section">
-                    <ul class="tabs tabs-fixed-width grey lighten-3">
-                      <li class="tab">
-                        <a href="#tasktab" class="blue-grey-text">Tasks</a>
-                      </li>
-                      <li class="tab">
-                        <a href="#processing" class="blue-grey-text">Processing</a>
-                      </li>
-                      <li class="tab">
-                        <a href="#contact-faculty" class="blue-grey-text">Contact Faculty</a>
-                      </li>
-                    </ul>
-                    <div>
-                      <div id="tasktab" class="tab-content">
-                        <div id="taskList"></div>
-                        <a onclick="addMore()" class="waves-effect waves-light btn">Show More</a>
-                      </div>
-                      <div id="processing" class="tab-content"></div>
-                    </div>
-                    <div class="tab-content" id="contact-faculty">
-                      <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
-                          <span class="card-title"> Contact Faculty</span> Faculty Member:
-                          <input type="text" id="nameF" />
-                        </br>Subject:
-                        <input type="text" id="subjectF" />
-                      </br>
-                              Message:
-                              
-                      <input type="text" id="queryF" />
-                    </br>
-                    <a onclick="responseSubmit();" class="waves-effect waves-light btn">Send Message</a>
-                  </div>
-                  </div>
-                </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdYS5l5ZnIxApSUZSfIbqVQonC2hOmXBo&libraries=places"></script>
-    <script>
-      $( document ).ready(function() {
-          $('.datepicker').pickadate({
-          selectMonths: true, // Creates a dropdown to control month
-          selectYears: 15, // Creates a dropdown of 15 years to control year
-          format:"mm/dd/yy"
-        });
-        var defaultBounds = new google.maps.LatLngBounds(
-          new google.maps.LatLng(40.499142, -74.246476),
-          new google.maps.LatLng(40.902818, -73.691026));
-
-        var input = document.getElementById('locationH');
-
-        var searchBox = new google.maps.places.SearchBox(input, {
-          bounds: defaultBounds
-        });
-        $('ul.tabs-fixed-width').tabs();
-        $('.tab-content').height($('.community-service-card').height());
-        $('.tab-content').css('overflow', 'auto');
-        // $('#history').css('top',($('nav').height()));
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdYS5l5ZnIxApSUZSfIbqVQonC2hOmXBo&libraries=places"></script>
+  <script>
+    $(document).ready(function () {
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year
+        format: "mm/dd/yy"
       });
-      function initialize()
-        {
-          opportunity = "Help needed at ";
-          locations = ["cafeteria", "library", "room", "gym 1", "gym 8"];
-          task = ["cleaning up", "assisting teacher", "carrying equipment", "paperwork", "monitoring", "tutoring"];
-          roomCodes = ["N", "W", "E","S"];
-          opportunitiesArray = [];
-          volunteerHistory = [];
-      
-          // locationIndex = generateRandomNumberBetween(0,locations.length - 1);
-          // opportunity += locations[i] + " Task:";
-          // opportunity += task[generateRandomNumberBetween(0,task.length - 1)] + ".";
-          populateArray(6);  
-          populateWithOpportunities();
-          if(volunteerHistory.length == 0){
-            $('#processing').append(emptyCard("remove_shopping_cart", "You don't have any volunteer experience! You need 50 hours for a Tech diploma.", "volunteer-empty"));
-          }
-          
-          hours = document.getElementById("numberH");
-          date = document.getElementById("dateH");
-          company = document.getElementById("providerH");
-          where = document.getElementById("locationH");
-          
-        }
-        
-        function emptyCard(icon, text, id){
-          var emptyCard = `<div class="card blue-grey darken-1" id=${id}>
+      var defaultBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(40.499142, -74.246476),
+        new google.maps.LatLng(40.902818, -73.691026));
+
+      var input = document.getElementById('locationH');
+
+      var searchBox = new google.maps.places.SearchBox(input, {
+        bounds: defaultBounds
+      });
+      $('ul.tabs-fixed-width').tabs();
+      $('.tab-content').height($('.community-service-card').height());
+      $('.tab-content').css('overflow', 'auto');
+      // $('#history').css('top',($('nav').height()));
+    });
+
+    function initialize() {
+      opportunity = "Help needed at ";
+      locations = ["cafeteria", "library", "room", "gym 1", "gym 8"];
+      task = ["cleaning up", "assisting teacher", "carrying equipment", "paperwork", "monitoring", "tutoring"];
+      roomCodes = ["N", "W", "E", "S"];
+      opportunitiesArray = [];
+      volunteerHistory = [];
+
+      // locationIndex = generateRandomNumberBetween(0,locations.length - 1);
+      // opportunity += locations[i] + " Task:";
+      // opportunity += task[generateRandomNumberBetween(0,task.length - 1)] + ".";
+      populateArray(6);
+      populateWithOpportunities();
+      if (volunteerHistory.length == 0) {
+        $('#processing').append(emptyCard("remove_shopping_cart",
+          "You don't have any volunteer experience! You need 50 hours for a Tech diploma.", "volunteer-empty"));
+      }
+
+      hours = document.getElementById("numberH");
+      date = document.getElementById("dateH");
+      company = document.getElementById("providerH");
+      where = document.getElementById("locationH");
+
+    }
+
+    function emptyCard(icon, text, id) {
+      var emptyCard =
+        `<div class="card blue-grey darken-1" id=${id}>
                 <div class="card-content white-text">
                   <center>
                     <i class = "material-icons large" style = "opacity:.5;">${icon}</i>
@@ -151,94 +151,95 @@
                   </center>
                 </div>
              </div>`;
-          return emptyCard;
-        }
-        function generateRandomNumberBetween(a, b)
-        {
-          randomNum = (Math.floor(Math.random() * b) + a);
-          return randomNum;
-        }
-        function Opportunity()
-        {
-            this.locations = locations[generateRandomNumberBetween(0, locations.length - 1)];
-            this.task = task[generateRandomNumberBetween(0,task.length - 1)];
-            if(this.locations == "room")
-            { // if the location is a classroom then
-              // generate random room number ie: 2N6
-              var room = generateRandomNumberBetween(1,6) + roomCodes[generateRandomNumberBetween(0, roomCodes.length - 1)] + generateRandomNumberBetween(1,6);
-              this.string = opportunity + this.locations + " " + room + " for " + this.task;
-            }
-            else
-            {
-              this.string = opportunity + this.locations + " for " + this.task;
-            }
-      
-        }
-        function populateArray(number)
-        {
-             for(var i = 0; i < number; i++)
-             {
-                 var theObject = new Opportunity();
-                 opportunitiesArray.push(theObject);
-             }
-        }
-        function populateWithOpportunities()
-        {
-            count = 0;
-            for (var i = 0; i < opportunitiesArray.length; i++)
-            {
-              card = `<div class="card blue-grey darken-1"><div class="card-content white-text">
+      return emptyCard;
+    }
+
+    function generateRandomNumberBetween(a, b) {
+      randomNum = (Math.floor(Math.random() * b) + a);
+      return randomNum;
+    }
+
+    function Opportunity() {
+      this.locations = locations[generateRandomNumberBetween(0, locations.length - 1)];
+      this.task = task[generateRandomNumberBetween(0, task.length - 1)];
+      if (this.locations == "room") { // if the location is a classroom then
+        // generate random room number ie: 2N6
+        var room = generateRandomNumberBetween(1, 6) + roomCodes[generateRandomNumberBetween(0, roomCodes.length - 1)] +
+          generateRandomNumberBetween(1, 6);
+        this.string = opportunity + this.locations + " " + room + " for " + this.task;
+      } else {
+        this.string = opportunity + this.locations + " for " + this.task;
+      }
+
+    }
+
+    function populateArray(number) {
+      for (var i = 0; i < number; i++) {
+        var theObject = new Opportunity();
+        opportunitiesArray.push(theObject);
+      }
+    }
+
+    function populateWithOpportunities() {
+      count = 0;
+      for (var i = 0; i < opportunitiesArray.length; i++) {
+        card =
+          `<div class="card blue-grey darken-1"><div class="card-content white-text">
                       <span class="card-title">${"Task " + (i + 1)}</span>
                       <p>${opportunitiesArray[i].string}</p>
                     </div>
                   </div></div>`;
-              $("#taskList").append(card);
-              count++;
-            }
-        }
-        function addMore(){
-          for(var i = 0; i < 4; i++)
-          {
-            var theObject = new Opportunity();
-            card = `<div class="card blue-grey darken-1"><div class="card-content white-text">
+        $("#taskList").append(card);
+        count++;
+      }
+    }
+
+    function addMore() {
+      for (var i = 0; i < 4; i++) {
+        var theObject = new Opportunity();
+        card =
+          `<div class="card blue-grey darken-1"><div class="card-content white-text">
                         <span class="card-title">${"Task " + (count + 1)}</span>
                         <p>${theObject.string}</p>
                       </div>
-                    </div></div>`;           
-            count++;
-           $("#taskList").append(card);
-          }
-        }
-      function formSubmit()
-      {
-        $('#volunteer-empty').remove();
-        finalDisplay = "Number of hours: " + hours.value + "<br />" +
+                    </div></div>`;
+        count++;
+        $("#taskList").append(card);
+      }
+    }
+
+    function formSubmit() {
+      $('#volunteer-empty').remove();
+      finalDisplay = "Number of hours: " + hours.value + "<br />" +
         "Date: " + $('.datepicker').val() + "<br />" +
         "Provider: " + company.value + "<br />" +
         "Location: " + where.value + "<br />" + "<br />";
-         card = 
+      card =
         `<div class="card volunteer-card blue-grey darken-1 animated fadeInLeft">
           <div class="card-content white-text">
             <span class="card-title">${company.value}</span>
             <p>${finalDisplay}</p>
           </div>
-          </div>`;        
-        var volunteerCard = $("#processing").append(card);
-        volunteerCard.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-          $('.volunteer-card').removeClass('animated fadeInLeft');
-        });
-          hours.value = "";
-          date.value = "";
-          company.value = "";
-          where.value = "";
-      }
-      function responseSubmit()
-      {
-        window.open(`https://mail.google.com/mail/u/0/?view=cm&fs=1&to=kip@schools.nyc.gov&su=${$('#subjectF').val()}&body=${$('#queryF').val()}`);
-        document.getElementById("nameF").value = "";
-        document.getElementById("subjectF").value = "";
-        document.getElementById("queryF").value = "";
-      }
-    </script>
-  </body>
+          </div>`;
+      var volunteerCard = $("#processing").append(card);
+      volunteerCard.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        $('.volunteer-card').removeClass('animated fadeInLeft');
+      });
+      hours.value = "";
+      date.value = "";
+      company.value = "";
+      where.value = "";
+    }
+
+    function responseSubmit() {
+      window.open(
+        `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=kip@schools.nyc.gov&su=${$('#subjectF').val()}&body=${$('#queryF').val()}`
+      );
+      document.getElementById("nameF").value = "";
+      document.getElementById("subjectF").value = "";
+      document.getElementById("queryF").value = "";
+    }
+  </script>
+</body>
+
 </html>

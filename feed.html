@@ -21,6 +21,12 @@
           <a href="#">Menu</a>
         </li>
       </ul>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="user.html" class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="Login"><i class="material-icons">account_circle</i></a>
+          <a href="https://github.com/Alan19/TechCommunityService/issues" class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="Contact"><i class="material-icons">Feedback</i></a>
+        </li>
+      </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"></a>
     </div>
   </nav>
@@ -114,6 +120,12 @@
       $('.tab-content').height($('.community-service-card').height());
       $('.tab-content').css('overflow', 'auto');
       // $('#history').css('top',($('nav').height()));
+
+      $(document).ready(function () {
+        $('.tooltipped').tooltip({
+          delay: 50
+        });
+      });
     });
 
     function initialize() {
